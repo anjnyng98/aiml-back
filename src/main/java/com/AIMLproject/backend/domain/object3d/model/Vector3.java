@@ -1,4 +1,5 @@
 package com.AIMLproject.backend.domain.object3d.model;
+
 import jakarta.persistence.Embeddable;
 import lombok.Getter;
 import lombok.Setter;
@@ -8,11 +9,11 @@ import lombok.Setter;
 @Embeddable
 public class Vector3 {
 
-	private float x;
-	private float y;
-	private float z;
+	private double x;
+	private double y;
+	private double z;
 
-	public Vector3(float x, float y, float z) {
+	public Vector3(double x, double y, double z) {
 		this.x = x;
 		this.y = y;
 		this.z = z;

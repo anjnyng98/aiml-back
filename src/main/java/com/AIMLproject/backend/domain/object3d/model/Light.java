@@ -10,11 +10,10 @@ import lombok.Setter;
 public class Light extends Object3D {
 
 	private int color;
-	private float intensity;
+	private double intensity;
 
-	public Light(Object3D parent, Vector3 position, Vector3 rotation, Vector3 scale, int color, float intensity) {
-		super(parent, position, rotation, scale);
-		this.type = Object3DType.LIGHT;
+	public Light(Object3D parent, Vector3 position, Vector3 rotation, Vector3 scale, int color, double intensity) {
+		super(Object3DType.LIGHT, parent, position, rotation, scale);
 		this.color = color;
 		this.intensity = intensity;
 	}

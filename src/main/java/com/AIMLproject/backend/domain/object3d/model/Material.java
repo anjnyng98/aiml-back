@@ -8,6 +8,7 @@ import lombok.Setter;
 @Setter
 @Embeddable
 public class Material {
+
 	private String color;
 
 	public Material(String color) {
