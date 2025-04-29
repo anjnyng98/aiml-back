@@ -16,9 +16,9 @@ public class Mesh extends Object3D {
 	@Embedded
 	private Material material;
 
-	public Mesh(Object3D parentId, Vector3 position, Vector3 rotation, Vector3 scale, Geometry geometry, Material material) {
-		super(parentId, position, rotation, scale);
-		this.type = Object3DType.MESH;
+	public Mesh(Object3D parent, Vector3 position, Vector3 rotation, Vector3 scale, Geometry geometry,
+		Material material) {
+		super(Object3DType.MESH, parent, position, rotation, scale);
 		this.geometry = geometry;
 		this.material = material;
 	}

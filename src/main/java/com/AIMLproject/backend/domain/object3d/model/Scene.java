@@ -21,9 +21,9 @@ public class Scene extends Object3D {
 
 	private String background;
 
-	public Scene(Project project, Object3D parent, Vector3 position, Vector3 rotation, Vector3 scale, String background) {
-		super(parent, position, rotation, scale);
-		this.type = Object3DType.SCENE;
+	public Scene(Project project, Object3D parent, Vector3 position, Vector3 rotation, Vector3 scale,
+		String background) {
+		super(Object3DType.SCENE, parent, position, rotation, scale);
 		this.project = project;
 		this.background = background;
 	}

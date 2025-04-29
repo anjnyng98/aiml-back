@@ -13,10 +13,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
@@ -28,7 +28,7 @@ import lombok.Setter;
 public abstract class Object3D extends BaseEntity {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
 	@Enumerated(EnumType.STRING)
@@ -36,7 +36,6 @@ public abstract class Object3D extends BaseEntity {
 
 	@ManyToOne
 	@OnDelete(action = OnDeleteAction.CASCADE)
-	@JoinColumn(name = "parent_id")
 	private Object3D parent;
 
 	@Embedded
@@ -63,7 +62,8 @@ public abstract class Object3D extends BaseEntity {
 	})
 	private Vector3 scale;
 
-	public Object3D(Object3D parent, Vector3 position, Vector3 rotation, Vector3 scale) {
+	public Object3D(Object3DType type, Object3D parent, Vector3 position, Vector3 rotation, Vector3 scale) {
+		this.type = type;
 		this.parent = parent;
 		this.position = position;
 		this.rotation = rotation;
